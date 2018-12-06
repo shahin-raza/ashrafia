@@ -26,29 +26,6 @@
 					echo '<li style="float:right"><a href="login.php">Login</a></li>';
 				}
 			?>
-			<li style="float:right"><a href="">Write for Us</a></li>
-			<li style="float:right"><a href="">List Your Institute</a></li>
+			<li style="float:right"><a href="index.php">Home</a></li>
 		</ul>
 	</div>
-
-	<nav  class="navbar navbar-light" style="background-color: white;">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="index.php"><img src="resources/files/Course-Suggest-Logo.png" height="40px" width="140px"></a>
-			</div>
-			<ul class="nav navbar-nav">
-				<li><a href="">PROFESSIONAL COURSES</a></li>
-				<li><a href="">MBA</a></li>
-				<li><a href="">DANCE</a></li>
-				<li><a href="">MUSIC</a></li>
-				<li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#">OTHER COURSES<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Page 1-1</a></li>
-						<li><a href="#">Page 1-2</a></li>
-						<li><a href="#">Page 1-3</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</nav>

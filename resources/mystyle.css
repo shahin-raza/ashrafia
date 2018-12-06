@@ -105,11 +105,13 @@ border-bottom: 0.5px dashed #8c8b8b30;
 color:red;
 }
 
-/*
-.uppermenu>ul>li>a {
-    display: block;
-    color: white;
-    text-align: center;
-    text-decoration: none;
+.Row{
+  display: table;
+  width: 100%; /*Optional*/
+  table-layout: fixed; /*Optional*/
+  border-spacing: 10px; /*Optional*/
 }
-*/
+
+.subform{
+  display: table-cell;
+}

@@ -17,7 +17,7 @@ $(function() {
     },
     // Specify validation error messages
     messages: {
-      name:   "Please enter your firstname",
+      name:   "Please enter your name",
       phone:  "Please enter your phone",
       city:   "Please enter your city",
       course: "Please enter your course",
