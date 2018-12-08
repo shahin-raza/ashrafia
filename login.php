@@ -1,4 +1,4 @@
-<?php include 'nav_home.php'; ?>
+<?php include 'nav_admin.php'; ?>
 <?php
     if(!isset($_SESSION)) {
         session_start();
@@ -60,6 +60,7 @@
         }
 
         echo '
+            <br /> <br /> <br />
             <form action="" name="loginform" method="post">
             <div class="imgcontainer">
                 <img src="resources/files/admin.png" alt="admin" height= "200px" width = "100px" class="avatar">

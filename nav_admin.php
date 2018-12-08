@@ -5,7 +5,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Ashrafia &mdash;institute</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="resources/files/ashrafia-fav.jpg" type="image/x-icon"/>
   <!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
@@ -18,6 +17,7 @@
 	<meta name="twitter:card" content="" />
 
 	<!-- <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet"> -->
+	<link rel="icon" href="resources/files/ashrafia-fav.jpg" type="image/x-icon"/>
 	<link rel="stylesheet" href="resources/mystyle.css">
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -39,6 +39,7 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="js/jquery.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -55,12 +56,7 @@
 				</div>
 				<div class="col-xs-12 text-right menu-1 main-nav">
 					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="courses">Courses</a></li>
-						<li><a href="#" data-nav-section="moments">Moments</a></li>
-						<li><a href="#" data-nav-section="faq">Faq</a></li>
-            <li><a href="#" data-nav-section="about">About us</a></li>
-						<li><a href="#" data-nav-section="contact">Contact</a></li>
+						<li class="active"><a href="index.php" class="external">Home</a></li>
 						<?php
 							if(!isset($_SESSION))
 							{

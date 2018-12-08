@@ -1,100 +1,4 @@
-<!DOCTYPE HTML>
-<!--
-	uBeasa by freshdesignweb.com
-	Twitter: https://twitter.com/freshdesignweb
-	URL: https://www.freshdesignweb.com
--->
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Ashrafia &mdash; A institute for learning</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--<meta name="description" content="Free HTML5 Website Template by freshdesignweb.com" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freshdesignweb.com" />
--->
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<!-- <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet"> -->
-	<link rel="stylesheet" href="resources/mystyle.css">
-	<!--<script src="http://localhost/ashrafia/resources/jquery.min.js"></script>-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="http://localhost/ashrafia/resources/bootstrap.min.js"></script>
-	<script src="http://localhost/ashrafia/resources/jquery.validate.min.js"></script>
-<!--<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>-->
-  <script src="http://localhost/ashrafia/resources/myscript.js"></script>
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Themify Icons-->
-	<link rel="stylesheet" href="css/themify-icons.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Flexslider -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
-	<body>
-	<div class="ubea-loader"></div>
-	<div id="page">
-	<nav class="ubea-nav" role="navigation">
-		<div class="ubea-container">
-			<div class="row">
-				<div class="col-sm-8 col-xs-12">
-					<div id="ubea-logo"><a href="index.php">AShrafia Institute Of Safety Management <em>.</em></a></div>
-				</div>
-				<div class="col-xs-12 text-right menu-1 main-nav">
-					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="courses">Courses</a></li>
-						<li><a href="#" data-nav-section="portfolio">Portfolio</a></li>
-            <li><a href="#" data-nav-section="about">About us</a></li>
-						<li><a href="#" data-nav-section="contact">Contact</a></li>
-						<?php
-							if(!isset($_SESSION))
-							{
-									session_start();
-							}
-							if (isset($_SESSION['user_id'])) {
-								echo '<li><a href="contact-view.php" class="external">View Contacts</a></li>';
-								echo '<li><a href="logout.php" class="external">Logout</a></li>';
-							} else {
-									echo '<li><a href="login.php" class="external">Login</a></li>';
-								}
-							?>
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
-
+<?php include 'nav_home.php'; ?>
 	<div id="ubea-hero" class="js-fullheight"  data-section="home">
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
@@ -103,8 +7,8 @@
 		   		<div class="container">
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
-		   					<h2>Explore the new template.</h2>
-		   					<p><a href="http://twitter.com/freshdesignweb" target="_blank" class="btn btn-primary btn-lg">Follow @freshdesignweb</a></p>
+		   					<h2>Ashrafia Institute Of Safety Management.</h2>
+		   					<p><a href="http://twitter.com/ashrafia" target="_blank" class="btn btn-primary btn-lg">Follow @ashrafia</a></p>
 		   				</div>
 		   			</div>
 		   		</div>
@@ -114,7 +18,7 @@
 		   		<div class="container">
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
-		   					<h2>Creative. Innovative.Intuitive.</h2>
+		   					<h2>Initiate. Learn. Explore.</h2>
 		   					<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
 		   				</div>
 		   			</div>
@@ -125,7 +29,7 @@
 		   		<div class="container">
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
-		   					<h2>A new experience.</h2>
+		   					<h2>Get a new experience.</h2>
 		   					<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
 		   				</div>
 		   			</div>
@@ -143,7 +47,7 @@
 					<div class="col-md-12">
 						<div class="ubea-heading">
 							<h2 class="ubea-left">Courses</h2>
-							<p> We provide full- time and part-time courses, like Safety Management , Higher Secondary (10+2) PCM, Secondary Education (STD V to Xth) , English Spoken etc.. and cover most of the popular computer technology.</p>
+							<p style="font-size: larger;"> We provide full- time and part-time courses, like Safety Management , Higher Secondary (10+2) PCM, Secondary Education <br>(v to xth) , English Spoken etc.. and cover most of the popular computer technology.</p>
 						</div>
 					</div>
 				</div>
@@ -158,29 +62,29 @@
 									</span>
 									<div class="feature-copy">
 										<h3>Safety Management</h3>
-										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Nulla cursus pharetra massa at lacinia Fusce eleifhend Fusce in dapibus.</p>
+										<p>Safety management system (SMS) is a comprehensive management system designed to manage safety elements in the workplace. It includes policy, objectives, plans, procedures, organisation, responsibilities and other measures.</p>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="feature-left">
 									<span class="icon">
-										<i class="icon-monitor"></i>
+									<i class="icon-layers"></i>
 									</span>
 									<div class="feature-copy">
-										<h3>Investment Banking</h3>
-										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Nulla cursus pharetra massa at lacinia Fusce eleifhend Fusce in dapibus.</p>
+										<h3>Secondary Education</h3>
+										<p>We are devoted in children education for our society, and so started the courses for classes v to xth , We will go through all the academic subjects and in a hope to complete it before time. We will also celebrate cultural activities.</p>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="feature-left">
 									<span class="icon">
-										<i class="icon-cup"></i>
+									<i class="icon-monitor"></i>
 									</span>
 									<div class="feature-copy">
-										<h3>Sales and Trading</h3>
-										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Nulla cursus pharetra massa at lacinia Fusce eleifhend Fusce in dapibus.</p>
+										<h3>Computer Courses</h3>
+										<p>Computer is the future of todays world, all the automation work are done by computer, We provide some of the courses like Tally, MS Word, MS Excel ,C, C++ etc.</p>
 									</div>
 								</div>
 							</div>
@@ -194,19 +98,19 @@
 										<i class="icon-pencil"></i>
 									</span>
 									<div class="feature-copy">
-										<h3>Strategic Planning</h3>
-										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Nulla cursus pharetra massa at lacinia Fusce eleifhend Fusce in dapibus.</p>
+										<h3>Higher Secondary Education</h3>
+										<p>We provide 11th and 12th whole courses of subjects PCM (Physics, Chemistry and Maths), the teachers are full of rich contents of knowledge and experience, We will also provide crash course for short interval of time.</p>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="feature-left">
 									<span class="icon">
-										<i class="icon-cog"></i>
+									<i class="icon-layers"></i>
 									</span>
 									<div class="feature-copy">
-										<h3>Turnaround Consulting</h3>
-										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Nulla cursus pharetra massa at lacinia Fusce eleifhend Fusce in dapibus.</p>
+										<h3>English Spoken</h3>
+										<p>English are the core needs for todays world , we need english to communicate with the different peoples around the world, We started the course contaning speaking, reading, writting, group discussion including grammer and literature skills.</p>
 									</div>
 								</div>
 							</div>
@@ -216,8 +120,8 @@
 										<i class="icon-layers"></i>
 									</span>
 									<div class="feature-copy">
-										<h3>Bonds & Commodities</h3>
-										<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Nulla cursus pharetra massa at lacinia Fusce eleifhend Fusce in dapibus.</p>
+										<h3>Others</h3>
+										<p> As per the student needs and interest we will explore some more courses in the future.</p>
 									</div>
 								</div>
 							</div>
@@ -227,12 +131,12 @@
 			</div>
 		</div>
 
-		<div class="ubea-section" id="ubea-portfolio" data-section="portfolio">
+		<div class="ubea-section" id="ubea-portfolio" data-section="moments">
 			<div class="ubea-container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center ubea-heading">
-						<h2>Portfolio</h2>
-						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+						<h2>Moments</h2>
+						<p>We have some moments to share with you.</p>
 					</div>
 				</div>
 				<div class="row">
@@ -294,7 +198,7 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center ubea-heading">
 						<h2>Frequently Ask Questions</h2>
-						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+						<p>Below are the list of faq questions to resolve the student issues and queries, even if you have a dought or question, you can directly approach us through the Contact section.</p>
 					</div>
 				</div>
 				<div class="row">
@@ -303,33 +207,33 @@
 						<div class="ubea-accordion">
 							<div class="ubea-accordion-heading">
 								<div class="icon"><i class="icon-cross"></i></div>
-								<h3>What is uBeasa?</h3>
+								<h3>What type of courses we provide?</h3>
 							</div>
 							<div class="ubea-accordion-content">
 								<div class="inner">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur.</p>
+									<p>We provide courses of Safety Management With certification, Secondary school courses of classes v to xth and Higher secondary school PCM course for class 11th and 12th, Computer courses, English Speaking etc.</p>
 								</div>
 							</div>
 						</div>
 						<div class="ubea-accordion">
 							<div class="ubea-accordion-heading">
 								<div class="icon"><i class="icon-cross"></i></div>
-								<h3>I have technical problem, who do I email?</h3>
+								<h3>How many classes can I take?</h3>
 							</div>
 							<div class="ubea-accordion-content">
 								<div class="inner">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur. </p>
+									<p>Number of classes and lectures are depend on the student needs and interest, our aim is to complete all the courses in specific time, even if students want some more lectures, we always welcome to provide them.</p>
 								</div>
 							</div>
 						</div>
 						<div class="ubea-accordion">
 							<div class="ubea-accordion-heading">
 								<div class="icon"><i class="icon-cross"></i></div>
-								<h3>How do I use uBeasa features?</h3>
+								<h3>Did I get study materials?</h3>
 							</div>
 							<div class="ubea-accordion-content">
 								<div class="inner">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur.</p>
+									<p>Sure, we will provide the study material time to time for all the courses, that would help students to understand and solve the problem easily.</p>
 								</div>
 							</div>
 						</div>
@@ -344,29 +248,29 @@
 							</div>
 							<div class="ubea-accordion-content">
 								<div class="inner">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur. </p>
+									<p>We provide lectures in mixed English and Hindi, so that all the students whether from English or Hindi medium can equally understand. Our main aim is to reach our knowledge up to you. </p>
 								</div>
 							</div>
 						</div>
 						<div class="ubea-accordion">
 							<div class="ubea-accordion-heading">
 								<div class="icon"><i class="icon-cross"></i></div>
-								<h3>Can I have a username that is already taken?</h3>
+								<h3>How do I enroll and register?</h3>
 							</div>
 							<div class="ubea-accordion-content">
 								<div class="inner">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur. </p>
+									<p>You can enroll to the courses by visiting our office address or you can approach through call or filling the form in the Contact section . </p>
 								</div>
 							</div>
 						</div>
 						<div class="ubea-accordion">
 							<div class="ubea-accordion-heading">
 								<div class="icon"><i class="icon-cross"></i></div>
-								<h3>Is uBeasa free?</h3>
+								<h3>When do I have to pay the tution fee?</h3>
 							</div>
 							<div class="ubea-accordion-content">
 								<div class="inner">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur. </p>
+									<p>If you pay the tution fee at one time, you will get some discounts. You have any financial problem you can pay the fee partially time to. </p>
 								</div>
 							</div>
 						</div>
@@ -378,76 +282,111 @@
 
 	</div>
     
-    <div id="ubea-blog" data-section="about">
-		<div class="ubea-container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center ubea-heading">
-					<h2>About us</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sed sequi rerumar quasi repellat eum earum praesentium totam! Quia, voluptas eaque anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore pariatur. </p>
+	<div class="ubea-section" id="ubea-blog" data-section="about">
+	<div class="ubea-container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="ubea-heading">
+					<h2 class="text-center">About us</h2>
+					<p class="about-des"><span style="color: chocolate;">Ashrafia Institute </span>has been surging ahead on the success track and has distinguished itself by setting up a new standard in the world of competitive education since 2016. It is an Institution of knowledge under the aegis of Mr. Faisal Sadar for imparting the quality education for the students of Safety Management, 11<sup>th</sup> & 12<sup>th</sup> (PCM), (V to X), both State Board Syllabus and CBSE Board Syllabus. Our qualified and experienced teachers conduct coaching classes, at convenient timings. </p>
+				  <br />
+					<p class="about-des"><span style="color: chocolate;">Ashrafia Institute </span> is structured on the principle of consistency and hardwork and believes in scientific approach based on perfect planning and proper guidance. Student’s overall development and splendid success is our prime concern. Genius teaches all subjects under one roof. </p>
 				</div>
 			</div>
-	    </div>
-    </div>
+		</div>
+	</div>
+</div>
       
-		<?php
-		if (!empty($_POST['name'])) {
-			$name  =  $_POST['name'];
-			$email = $_POST['email'];
-			$phone = $_POST['phone'];
-			$city = $_POST['city'];
-			$course = $_POST['course'];
-			$message = $_POST['message'];
-			require_once('db.php');
-			// inserting to database
-			$sql = "INSERT INTO contact_us (name,email,phone,city,course,message) 
-			        VALUES ('$name','$email','$phone','$city','$course','$message')";
-			$conn->query($sql);
-			$conn->close();
-			//$result =mysqli_query($conn, $query);
+<?php
+	if (!empty($_POST['name'])) {
+		$name  =  $_POST['name'];
+		$email = $_POST['email'];
+		$phone = $_POST['phone'];
+		$city = $_POST['city'];
+		$course = $_POST['course'];
+		$message = $_POST['message'];
+		require_once('db.php');
+		// inserting to database
+		$sql = "INSERT INTO contact_us (name,email,phone,city,course,message) 
+						VALUES ('$name','$email','$phone','$city','$course','$message')";
+		$conn->query($sql);
+		$conn->close();
 
+		echo '
+		<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>Thanks <span class="contact-name">'.$name.'</span> for your interest in our institute, We will contact you soon. </p>
+		</div>
+	
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#myModal").show();
+		});
+
+		var modal = document.getElementById("myModal");
+		var span = document.getElementsByClassName("close")[0];
+		span.onclick = function() {
+				modal.style.display = "none";
 		}
-		?>
-		
+		window.onclick = function(event) {
+				if (event.target == modal) {
+						modal.style.display = "none";
+				}
+		}
+	</script>
+		';
+	}
+?>
+</script>
 		<div id="ubea-contact" data-section="contact" id="ubea-faq"">
 		  <div class="overlay"></div>
 			<div class="ubea-container">
-				<div id="#enqtitle"><h3 style="color:black; text-align:center;"><b>Course Enquiry Form</b></h3></div>
-				<div id="form-title">Fields marked with an <span class = "error">*</span> are required</div>
-					<form action="" method ="POST" name="contactform">
-					<div class="Row">
-					  <div class="subform">
-							<label>Name <span class = "error"> * </label><br />
-							<input type="text" name="name" size="30" id="name">
-						</div>
-						<div class="subform">
-							<label>Email <span class = "error"> * </span></label><br />
-							<input type="text" name="email" size="30" id="email">
-						</div>
-						<div class="subform">
-							<label>Phone <span class = "error"> * </span></label><br />
-							<input type="text" name="phone" size="30" id="phone">
+		    <div class="row">
+					<div class="col-md-12">
+						<div class="ubea-heading">
+							<h2 class="text-center">Course Ꮛnquiry Form</h2>
+							<div id="form-title">Fields marked with an <span class = "error">*</span> are required</div>
+							<form action="" method ="POST" name="contactform">
+								<div class="contact-form">
+									<div class="Row">
+										<div class="subform">
+											<label>Name <span class = "error"> * </label><br />
+											<input type="text" name="name" size="30" id="name" required>
+										</div>
+										<div class="subform">
+											<label>Email <span class = "error"> * </span></label><br />
+											<input type="email" name="email" size="30" id="email" required>
+										</div>
+										<div class="subform">
+											<label>Phone <span class = "error"> * </span></label><br />
+											<input type="text" name="phone" size="30" id="phone" required>
+										</div>
+									</div>
+									<div class="Row">
+										<div class="subform">
+											<label>City <span class = "error"> * </span></label><br />
+											<input type="text" name="city" size="30" id="city" required>
+										</div>
+										<div class="subform">
+											<label>Course Name <span class = "error"> * </span></label> <br/>
+											<input type="text" name="course" size="30" id="course" required>
+										</div>
+										<div class="subform">
+											<label>Message <span class = "error"> * </span></label> <br />
+											<textarea rows="2" cols="29" name="message" id="message" required></textarea>
+										</div>
+									</div>
+								</div>
+								<input type="submit" class="btn btn-primary" id="submit-button" value="submit">
+						  </form>
 						</div>
 					</div>
-					<div class="Row">
-						<div class="subform">
-							<label>City <span class = "error"> * </span></label><br />
-							<input type="text" name="city" size="30" id="city">
-						</div>
-						<div class="subform">
-							<label>Course Name <span class = "error"> * </span></label> <br/>
-							<input type="text" name="course" size="30" id="course">
-						</div>
-						<div class="subform">
-							<label>Message <span class = "error"> * </span></label> <br />
-							<textarea rows="2" cols="29" name="message" id="message"></textarea>
-						</div>
-	        </div>
-						<input type="submit" class="btn btn-primary" value="submit">
-					</form>
 				</div>
-		  </div>
-	  </div>
-		
+			</div>
+		</div>
 	
 <!--	<div id="ubea-contact" data-section="contact" class="ubea-cover ubea-cover-xs" style="background-image:url(images/img_bg_2.jpg);">
 		<div class="overlay"></div>
@@ -463,55 +402,4 @@
 			</div>
 		</div>
 	</div>-->
-
-	<footer id="ubea-footer" role="contentinfo">
-		<div class="ubea-container">
-			
-			<div class="row copyright">
-				<div class="col-md-12">
-					<p class="pull-left">
-						<small class="block">&copy; 2018 freshDesignweb. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="https://www.freshdesignweb.com/" target="_blank">freshDesignweb.com</a></small>
-					</p>
-					<p class="pull-right">
-						<ul class="ubea-social-icons pull-right">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
-
-		</div>
-	</footer>
-	</div>
-
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
-	
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- countTo -->
-	<script src="js/jquery.countTo.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
-	<!-- Main -->
-	<script src="js/main.js"></script>
-
-	</body>
-</html>
-
+	<?php include 'footer.php'; ?>
