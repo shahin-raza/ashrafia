@@ -47,14 +47,13 @@
 					<div class="col-md-12">
 						<div class="ubea-heading">
 							<h2 class="ubea-left">Courses</h2>
-							<p style="font-size: larger;"> We provide full- time and part-time courses, like Safety Management , Higher Secondary (10+2) PCM, Secondary Education <br>(v to xth) , English Spoken etc.. and cover most of the popular computer technology.</p>
+							<p style="font-size: 19px;color: #968888;font-family: inherit;"> We provide full- time and part-time courses, like Safety Management , Higher Secondary (10+2) PCM, Secondary Education <br>(v to xth) , English Spoken etc.. and cover most of the popular computer technology.</p>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-6">
 						<div class="row">
-
 							<div class="col-md-12">
 								<div class="feature-left">
 									<span class="icon">
@@ -141,7 +140,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-4">
-						<a href="images/img_2.jpg" class="ubea-card-item image-popup" title="Project name here.">
+						<a href="images/img_2.jpg" class="ubea-card-item image-popup" title="Delhi metro.">
 							<figure>
 								<div class="overlay"><i class="ti-plus"></i></div>
 								<img src="images/img_2.jpg" alt="Image" class="img-responsive">
@@ -270,7 +269,7 @@
 							</div>
 							<div class="ubea-accordion-content">
 								<div class="inner">
-									<p>If you pay the tution fee at one time, you will get some discounts. You have any financial problem you can pay the fee partially time to. </p>
+									<p>If you pay the tution fee at one time, you will get some discounts. If you have any financial problem you can pay the fee partially time to. </p>
 								</div>
 							</div>
 						</div>
@@ -288,9 +287,9 @@
 			<div class="col-md-12">
 				<div class="ubea-heading">
 					<h2 class="text-center">About us</h2>
-					<p class="about-des"><span style="color: chocolate;">Ashrafia Institute </span>has been surging ahead on the success track and has distinguished itself by setting up a new standard in the world of competitive education since 2016. It is an Institution of knowledge under the aegis of Mr. Faisal Sadar for imparting the quality education for the students of Safety Management, 11<sup>th</sup> & 12<sup>th</sup> (PCM), (V to X), both State Board Syllabus and CBSE Board Syllabus. Our qualified and experienced teachers conduct coaching classes, at convenient timings. </p>
+					<p class="about-des" style="font-size: 18px;"><span style="color: chocolate;">Ashrafia Institute </span>has been surging ahead on the success track and has distinguished itself by setting up a new standard in the world of competitive education since 2016. It is an Institution of knowledge under the aegis of Mr. Faisal Sadar for imparting the quality education for the students of Safety Management, 11<sup>th</sup> & 12<sup>th</sup> (PCM), (V to X), both State Board Syllabus and CBSE Board Syllabus. Our qualified and experienced teachers conduct coaching classes, at convenient timings. </p>
 				  <br />
-					<p class="about-des"><span style="color: chocolate;">Ashrafia Institute </span> is structured on the principle of consistency and hardwork and believes in scientific approach based on perfect planning and proper guidance. Student’s overall development and splendid success is our prime concern. Genius teaches all subjects under one roof. </p>
+					<p class="about-des" style="font-size: 18px;"><span style="color: chocolate;">Ashrafia Institute </span> is structured on the principle of consistency and hardwork and believes in scientific approach based on perfect planning and proper guidance. Student’s overall development and splendid success is our prime concern. Genius teaches all subjects under one roof. </p>
 				</div>
 			</div>
 		</div>
@@ -341,53 +340,95 @@
 	}
 ?>
 </script>
-		<div id="ubea-contact" data-section="contact" id="ubea-faq"">
-		  <div class="overlay"></div>
+<div class="ubea-section" id="ubea-contact" data-section="contact">
 			<div class="ubea-container">
-		    <div class="row">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center ubea-heading">
+						<h2 class="text-center">Course Ꮛnquiry Form</h2>
+						<p id="form-title">Fields marked with an <span class = "error">*</span> are required</p>
+					</div>
+				</div>
+				<form action="" method ="POST" name="contactform">
+					<div class="row">
+						<div class="col-md-4">
+							<label>Name <span class = "error"> * </label><br />
+							<input type="text" name="name" size="30" id="name" required>
+						</div>
+						<div class="col-md-4">
+							<label>Email <span class = "error"> * </span></label><br />
+							<input type="email" name="email" size="30" id="email" required>
+						</div>
+						<div class="col-md-4">
+							<label>Phone <span class = "error"> * </span></label><br />
+							<input type="text" name="phone" size="30" id="phone" maxlength="10" required>
+						</div>
+						<div class="col-md-4">
+							<label>City <span class = "error"> * </span></label><br />
+							<input type="text" name="city" size="30" id="city" required>
+						</div>
+						<div class="col-md-4">
+							<label>Course Name <span class = "error"> * </span></label> <br/>
+							<input type="text" name="course" size="30" id="course" required>
+						</div>
+						<div class="col-md-4">
+							<label>Message <span class = "error"> * </span></label> <br />
+							<textarea rows="2" cols="29" name="message" id="message" required></textarea>
+						</div>
+					</div>
+					<input type="submit" class="btn btn-primary" id="submit-button" value="submit">
+				</form>
+			</div>
+		</div>
+
+
+<div class="ubea-section" id="ubea-contact-us" data-section="">
+			<div class="ubea-container">
+				<div class="row">
 					<div class="col-md-12">
 						<div class="ubea-heading">
-							<h2 class="text-center">Course Ꮛnquiry Form</h2>
-							<div id="form-title">Fields marked with an <span class = "error">*</span> are required</div>
-							<form action="" method ="POST" name="contactform">
-								<div class="contact-form">
-									<div class="Row">
-										<div class="subform">
-											<label>Name <span class = "error"> * </label><br />
-											<input type="text" name="name" size="30" id="name" required>
-										</div>
-										<div class="subform">
-											<label>Email <span class = "error"> * </span></label><br />
-											<input type="email" name="email" size="30" id="email" required>
-										</div>
-										<div class="subform">
-											<label>Phone <span class = "error"> * </span></label><br />
-											<input type="text" name="phone" size="30" id="phone" required>
-										</div>
-									</div>
-									<div class="Row">
-										<div class="subform">
-											<label>City <span class = "error"> * </span></label><br />
-											<input type="text" name="city" size="30" id="city" required>
-										</div>
-										<div class="subform">
-											<label>Course Name <span class = "error"> * </span></label> <br/>
-											<input type="text" name="course" size="30" id="course" required>
-										</div>
-										<div class="subform">
-											<label>Message <span class = "error"> * </span></label> <br />
-											<textarea rows="2" cols="29" name="message" id="message" required></textarea>
-										</div>
+						<h2 class="text-center">Contact Us</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="feature-left">
+									<span class="icon">
+										<i class="icon-address"></i>
+									</span>
+									<div class="feature-copy">
+										<h3>Ashrafia Institute Of Safety Management</h3>
+										<p>3<sup>rd</sup> Floor, Raza Market, Moh. Mahatwana<br />
+											Behind Imarat-e-shariah <br />
+											Phulwari Sharif, Patna
+										</p>
 									</div>
 								</div>
-								<input type="submit" class="btn btn-primary" id="submit-button" value="submit">
-						  </form>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="feature-left">
+									<span class="icon">
+										<i class="icon-mobile"></i>
+									</span>
+									<div class="feature-copy">
+										<h3>For any enquiry feel free to call us</h3>
+										<p><span class="icon-mobile"></span>&nbsp 8292061308</span><br />
+										<span class="icon-mobile"></span>&nbsp 7352840484</span>
+									  </p>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	
 <!--	<div id="ubea-contact" data-section="contact" class="ubea-cover ubea-cover-xs" style="background-image:url(images/img_bg_2.jpg);">
 		<div class="overlay"></div>
 		<div class="ubea-container">

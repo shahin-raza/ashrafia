@@ -8,6 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 	$sql="DELETE FROM contact_us WHERE cid={$cid}";
   $conn->query($sql);
   $conn->close();
-	header("Location: contact-view.php");
+  header("Location: contact-view.php");
+  exit;
 }
 ?>
