@@ -63,7 +63,7 @@
 									session_start();
 							}
 							if (isset($_SESSION['user_id'])) {
-								echo '<li><a href="contact-view.php" class="external">View Contacts</a></li>';
+								echo '<li><a href="admin-view.php" class="external">Admin</a></li>';
 								echo '<li><a href="logout.php" class="external">Logout</a></li>';
 							} else {
 									echo '<li><a href="login.php" class="external">Login</a></li>';

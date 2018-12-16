@@ -103,3 +103,8 @@ input[type=text],input[type=email], select, textarea {
 .con-mobile {
   margin-right: 140px;
 }
+
+.enq-done {
+  font-size: 14px;
+  color: crimson;
+}

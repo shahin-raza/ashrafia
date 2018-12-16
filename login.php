@@ -54,7 +54,7 @@
         if (!empty($_POST['uname'])) {
             if(($_POST['uname']=='admin') && ($_POST['psw']=='admin1234')) {
                 $_SESSION['user_id'] = $_POST['uname'];
-                header('Location: contact-view.php');
+                header('Location: admin-view.php');
                 exit();
             }
         }

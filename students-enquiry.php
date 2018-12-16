@@ -37,35 +37,36 @@ if (!isset($_SESSION['user_id'])) {
                 $fid = "followup-".$row['cid'];
                 echo '
                   <script>
-                    $(document).ready(function() {
-                      $("#'.$fid.'").click(function() {
-                        if (this.checked) {
-                          var x = $(this).val();
+                    function getFolUp(x) {
+                      $(document).ready(function() {
+                        if (x) {
                           $.ajax({
                             type: "POST",
                             data: {cid:x},
-                            url: "contact-update.php",
+                            url: "enquiry-update.php",
                             success: function(data) {
-                              window.location= "contact-view.php'.$pageUrl.'";
+                              location.reload(true);
                             },
                             error: function(data) {
                             }
                           });
                         }
                       });
-                    });
+                    }
+                   
                   </script>
                 ';
               $date = strtotime($row['date']);
               $mess.= '<tr><td>'.$row['name'].'</td><td>'.$row['email'].'</td><td>'.$row['phone'].'</td><td>'.$row['city'].'</td><td>'.$row['course'].'</td><td>'.$row['message'].'</td><td>'.date('M d Y , g:i A',$date).'</td><td>';
               if ($row['followup']=='NO') {
                 $fup = $row['followup'];
-                $mess.= ''.$fup.'<div style="margin-left:2px;"><input type="checkbox" value="'.$row['cid'].'" id="'.$fid.'"> Done</div></td>';
+                $cid = $row['cid'];
+                $mess.= $fup.'&nbsp<span class="enq-done"><button id="'.$fid.'" onclick="getFolUp('.$cid.')">Done</button></span>';//"&nbsp <button id="'.$fid.'" onclick="getFolUp()">Done</button>';
               } else {
                 $fup = $row['followup'];
                 $mess.= ''.$fup.'';
               }
-              $mess .='</td><td><a href="contact-delete.php?cid='.$row['cid'].'">Delete</a></td></tr>';
+              $mess .='</td><td><a href="enquiry-delete.php?cid='.$row['cid'].'">Delete</a></td></tr>';
             }
         }
         $conn->close();
@@ -78,7 +79,7 @@ if (!isset($_SESSION['user_id'])) {
             $links.= '<div class="contact-pager">
             <ul class="pagination pagination-sm">';
             for ($i = 1; $i <= $totalPages; $i++) {
-              $links.= "<li class='page-item'><a class='page-link' href='contact-view.php?page=$i'>$i</a></li>";
+              $links.= "<li class='page-item'><a class='page-link' href='students-enquiry.php?page=$i'>$i</a></li>";
             }
             $links.= '</ul></div>';
   }
