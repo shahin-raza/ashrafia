@@ -54,7 +54,7 @@
         if (!empty($_POST['uname'])) {
             if(($_POST['uname']=='admin') && ($_POST['psw']=='admin1234')) {
                 $_SESSION['user_id'] = $_POST['uname'];
-                header('Location: admin-view.php');
+                header('Location: admin');
                 exit();
             }
         }
@@ -76,7 +76,11 @@
                 <button type="submit">Login</button>
             </div>
             </form>';
-}
+    }
+    if (isset($_SESSION['user_id'])) {
+        header('Location: admin');
+        exit();
+    }
 ?>
 
 <?php include 'footer.php'; ?>

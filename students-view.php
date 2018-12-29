@@ -15,8 +15,11 @@ if (!isset($_SESSION['user_id'])) {
       <div class="col-md-8 col-md-offset-2 text-center ubea-heading">
         <h2 class="text-center">Students</h2>
       </div>
-    </div>
-
+      <div class="row">
+        <div class="col-md-4 col-md-offset-10">
+          <a href="students-add" class="add-button">Add Student</a>
+        </div>
+      </div>
     <div class="table-responsive">
       <table class="table table-dark">
         <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Course</th><th>Fee Total</th><th>Fee Paid</th><th>Fee Remaining</th><th></th></tr></thead>

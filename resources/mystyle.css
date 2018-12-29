@@ -108,3 +108,16 @@ input[type=text],input[type=email], select, textarea {
   font-size: 14px;
   color: crimson;
 }
+
+.add-button{
+  background-color:orangered;
+  color: white;
+  padding: 8px 15px;
+  text-align: center;
+  display: inline-block;
+}
+
+a.add-button:hover, a.add-button:active {
+  background-color: red;
+  color: white;
+}

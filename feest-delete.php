@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 	$sql="DELETE FROM course WHERE cid={$cid}";
   $conn->query($sql);
   $conn->close();
-  header("Location: fee-structure.php");
+  header("Location: ../fee-structure");
   exit();
 }
 ?>

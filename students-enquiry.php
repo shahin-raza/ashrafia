@@ -61,12 +61,12 @@ if (!isset($_SESSION['user_id'])) {
               if ($row['followup']=='NO') {
                 $fup = $row['followup'];
                 $cid = $row['cid'];
-                $mess.= $fup.'&nbsp<span class="enq-done"><button id="'.$fid.'" onclick="getFolUp('.$cid.')">Done</button></span>';//"&nbsp <button id="'.$fid.'" onclick="getFolUp()">Done</button>';
+                $mess.= $fup.'&nbsp<span class="enq-done"><button id="'.$fid.'" onclick="getFolUp('.$cid.')" class="add-button"><b>Done</b></button></span>';
               } else {
                 $fup = $row['followup'];
                 $mess.= ''.$fup.'';
               }
-              $mess .='</td><td><a href="enquiry-delete.php?cid='.$row['cid'].'">Delete</a></td></tr>';
+              $mess .='</td><td><a href="enquiry-delete/'.$row['cid'].'">Delete</a></td></tr>';
             }
         }
         $conn->close();
@@ -79,7 +79,7 @@ if (!isset($_SESSION['user_id'])) {
             $links.= '<div class="contact-pager">
             <ul class="pagination pagination-sm">';
             for ($i = 1; $i <= $totalPages; $i++) {
-              $links.= "<li class='page-item'><a class='page-link' href='students-enquiry.php?page=$i'>$i</a></li>";
+              $links.= "<li class='page-item'><a class='page-link' href='enquiry?page=$i'>$i</a></li>";
             }
             $links.= '</ul></div>';
   }

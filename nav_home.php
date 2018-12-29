@@ -51,7 +51,7 @@
 		<div class="ubea-container">
 			<div class="row">
 				<div class="col-sm-8 col-xs-12">
-					<div id="ubea-logo"><a href="index.php">AShrafia Institute Of Safety Management <em>.</em></a></div>
+					<div id="ubea-logo"><a href="home">AShrafia Institute Of Safety Management <em>.</em></a></div>
 				</div>
 				<div class="col-xs-12 text-right menu-1 main-nav">
 					<ul>
@@ -67,10 +67,10 @@
 									session_start();
 							}
 							if (isset($_SESSION['user_id'])) {
-								echo '<li><a href="admin-view.php" class="external">Admin</a></li>';
-								echo '<li><a href="logout.php" class="external">Logout</a></li>';
+								echo '<li><a href="admin" class="external">Admin</a></li>';
+								echo '<li><a href="logout" class="external">Logout</a></li>';
 							} else {
-									echo '<li><a href="login.php" class="external">Login</a></li>';
+									echo '<li><a href="login" class="external">Login</a></li>';
 								}
 							?>
 					</ul>

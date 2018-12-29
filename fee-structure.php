@@ -16,6 +16,11 @@ if (!isset($_SESSION['user_id'])) {
         <h2 class="text-center">Fee Structure</h2>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-10"> 
+        <a href="course-add" class="add-button">Add Course</a>
+      </div>
+    </div>
     <div class="table-responsive">
         <table class="table table-dark">
           <thead><tr><th>Course Name</th><th>Fee Amount</th><th>Duration</th><th></th></tr></thead>
@@ -28,7 +33,7 @@ if (!isset($_SESSION['user_id'])) {
                 while($row = $result->fetch_assoc()) {
                  echo "<tr><td>".$row['c_name']."</td><td>Rs. ".$row['c_fee']."</td><td>".$row['c_duration']." Months</td>";
                  echo '<td><a href="feest-edit.php?cid='.$row['cid'].'">Edit</a>&nbsp &nbsp';
-                 echo '<a href="feest-delete.php?cid='.$row['cid'].'">Delete</a></td></tr>';
+                 echo '<a href="feest-delete/'.$row['cid'].'">Delete</a></td></tr>';
                 }
               }
               $conn->close();
