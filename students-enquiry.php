@@ -12,6 +12,11 @@ if (!isset($_SESSION['user_id'])) {
 				<h2 class="text-center">Students Enquiry List</h2>
 			</div>
     </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-10">
+      <a href="admin" class="add-button"><span class="icon-back"></span> Admin</a>
+      </div>
+    </div>
       <div class="table-responsive">
         <table class="table table-dark">
           <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>City</th><th>Course</th><th>Message</th><th>Date</th><th>Followup</th><th></th></tr></thead>

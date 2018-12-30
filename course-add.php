@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-  header('Location: index.php');
+  header('Location: home');
   exit();
 } else {
   include 'nav_admin.php';
@@ -44,6 +44,7 @@ if (!empty($_POST["course"])) {
         </div>
         <div class="col-md-4">
           <input type="submit" class="btn btn-primary" id="submit-button" value="submit">
+          <a href="admin" class="add-button">Cancel</a>
         </div>
       </div>
     </form>

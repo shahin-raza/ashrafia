@@ -1,10 +1,15 @@
 <?php
+$sid = $_GET['sid'];
 session_start();
 if (!isset($_SESSION['user_id'])) {
-  header('Location: index.php');
+  header('Location: ../home');
   exit();
 } else {
-    include 'nav_admin.php';
+    if (empty($sid) || !is_numeric($sid)) {
+      header('Location: ../admin');
+      exit();
+    }
+    include 'nav_admin-edit.php';
     $errors = array();
     $name = $email = $phonenum = $coursefee = $feePaid = $feeRemain ="";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,7 +19,7 @@ if (!isset($_SESSION['user_id'])) {
         $data = htmlspecialchars($data);
         return $data;
       }
-    
+  
       //validating name
       if (empty($_POST["name"])) {
         $errors['nameErr']= "Name is required";
@@ -73,38 +78,13 @@ if (!isset($_SESSION['user_id'])) {
         $feeremain  = $_POST['feeremain'];
         require_once('db.php');
         // inserting to database
-        $sql = "INSERT INTO student (name,email,phone,course,feetotal,feepaid,feeremain) 
-                VALUES ('$name','$email','$phone','$course','$feetotal','$feepaid','$feeremain')";
+        $sql = "UPDATE student
+                SET name='$name',email='$email',phone='$phone',course='$course',feetotal='$feetotal',feepaid='$feepaid',feeremain='$feeremain'
+                WHERE sid={$sid}";
         $conn->query($sql);
         $conn->close();
-        header('Location: students-view');
+        header('Location: ../students-view');
         exit();
-      /*  echo '
-		<div id="myModal" class="modal">
-		<div class="modal-content">
-			<span class="close">&times;</span>
-			<p><span class="contact-name">'.$name.'</span> is added successfully. </p>
-		</div>
-	
-	</div>
-	<script src="js/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$("#myModal").show();
-		});
-
-		var modal = document.getElementById("myModal");
-		var span = document.getElementsByClassName("close")[0];
-		span.onclick = function() {
-				modal.style.display = "none";
-		}
-		window.onclick = function(event) {
-				if (event.target == modal) {
-						modal.style.display = "none";
-				}
-		}
-	</script>
-		';*/
       }
     }
   }
@@ -118,7 +98,7 @@ $(document).ready(function() {
       $.ajax({
         type: "POST",
         data: {cname:cname},
-        url: "get-fee.php",
+        url: "../get-fee.php",
         success: function(feetotal) {
           $("input[name='feetotal']").val(feetotal);
           var feep = 0;
@@ -140,55 +120,77 @@ $(document).ready(function() {
     var feet = Number($('#feetotal').val());
     $("input[name='feeremain']").val(feet-feep);
   });
-  
-  if ("<?php if(isset($_POST['course'])) echo $_POST['course']?>") {
-  $("#course-select").val("<?php if(isset($_POST['course'])) echo $_POST['course']?>");
-  }
 });
 </script>
 <br /> <br /> <br /><br />
+<?php
+  require_once('db.php');
+  $sql = "SELECT * FROM student WHERE sid={$sid}";
+  $eResult = $conn->query($sql);
+  if ($eResult->num_rows > 0) {
+    while($row = $eResult->fetch_assoc()) {
+     $eName      = $row['name'];
+     $eEmail     = $row['email'];
+     $ePhone     = $row['phone'];
+     $eCourse    = $row['course'];
+     $eFeetotal  = $row['feetotal'];
+     $eFeepaid   = $row['feepaid'];
+     $eFeeremain = $row['feeremain'];
+    }
+  }
+?>
+<script>
+$(document).ready(function() {
+  if ("<?php if(isset($_POST['course'])) echo $_POST['course']?>") {
+    $("#course-select").val("<?php if(isset($_POST['course'])) echo $_POST['course']?>");
+  } else {
+     if ("<?php echo $eCourse?>") {
+      $("#course-select").val("<?php echo $eCourse?>").change();
+     }
+  }
+});
+</script>
 <div class="ubea-section" id="ubea-contact-view" data-section="">
   <div class="ubea-container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-center ubea-heading">
-        <h2 class="text-center">Add Student</h2>
+        <h2 class="text-center">Edit Student</h2>
         <p id="form-title">Fields marked with an <span class = "error">*</span> are required</p>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 col-md-offset-9">
-        <a href="students-view" class="add-button">View Students</a>
-        <a href="admin" class="add-button"><span class="icon-back"></span> Admin</a>
+      <div class="col-md-4 col-md-offset-10">
+        <a href="../admin" class="add-button"><span class="icon-back"></span> Admin</a>
       </div>
     </div>
     <form action="" method ="POST" name="studentform">
       <div class="row">
         <div class="col-md-4">
           <label>Name <span class = "error">* <?php  if(isset($errors['nameErr'])) echo $errors['nameErr'] ?></span> </label><br />
-          <input type="text" name="name" size="30" id="name" value="<?php if(isset($_POST['name'])) {echo $_POST['name'];}?>">
+          <input type="text" name="name" size="30" id="name" value="<?php if(isset($_POST['name'])) {echo $_POST['name'];} else{echo $eName;}?>">
         </div>
         <div class="col-md-4">
           <label>Email <span class = "error">* <?php  if(isset($errors['emailErr'])) echo $errors['emailErr'] ?></span></label><br />
-          <input type="text" name="email" size="30" id="email" value="<?php if(isset($_POST['email'])) {echo $_POST['email'];}?>">
+          <input type="text" name="email" size="30" id="email" value="<?php if(isset($_POST['email'])) {echo $_POST['email'];} else{echo $eEmail;}?>">
         </div>
         <div class="col-md-4">
           <label>Phone <span class = "error">* <?php  if(isset($errors['phoneErr'])) echo $errors['phoneErr'] ?></span></label><br />
-          <input type="text" name="phone" size="30" id="phone" value="<?php if(isset($_POST['phone'])) {echo $_POST['phone'];}?>" maxlength="10">
+          <input type="text" name="phone" size="30" id="phone" value="<?php if(isset($_POST['phone'])) {echo $_POST['phone'];} else{echo $ePhone;}?>" maxlength="10">
         </div>
         <div class="col-md-4">
           <label>Course Name <span class = "error">* <?php  if(isset($errors['courseErr'])) echo $errors['courseErr'] ?></span></label> <br/>
           <select class="form-control" id="course-select" name="course">
           <option value="none">--Please Select--</option>
            <?php
-            require_once('db.php');
             $sql = "SELECT c_name FROM course ORDER BY date ASC";
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-              while($row = $result->fetch_assoc()) {
+            $results = $conn->query($sql);
+            if ($results->num_rows > 0) {
+              while($row = $results->fetch_assoc()) {
                 $cname = $row['c_name'];
                 echo '<option value="'.$cname.'">'.$row['c_name'].'</option>';
               }
             }
+            $conn->close();
            ?>
           </select>
         </div>
@@ -198,7 +200,7 @@ $(document).ready(function() {
         </div>
         <div class="col-md-4">
           <label>Fee Paid <span class = "error">* <?php  if(isset($errors['feepErr'])) echo $errors['feepErr'] ?></span></label><br />
-          <input type="text" name="feepaid" size="30" id="feepaid" value="<?php if(isset($_POST['feepaid'])) {echo $_POST['feepaid'];}?>">
+          <input type="text" name="feepaid" size="30" id="feepaid" value="<?php if(isset($_POST['feepaid'])) {echo $_POST['feepaid'];} else{echo $eFeepaid;}?>">
         </div>
         <div class="col-md-4">
           <label>Fee Remaining <span class = "error"> * </span></label><br />
@@ -207,10 +209,11 @@ $(document).ready(function() {
         <div class="col-md-4">
           <br />
           <input type="submit" class="btn btn-primary" id="submit-button" value="submit">
+          <a href="../students-view" class="add-button"><span class="icon-cancel"></span> Cancel</a>
         </div>
       </div>
     </form>
   </div>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include 'footer-edit.php'; ?>
