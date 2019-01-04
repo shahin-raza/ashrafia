@@ -20,13 +20,53 @@ if (!isset($_SESSION['user_id'])) {
           <a href="students-add" class="add-button">Add Student</a>
           <a href="admin" class="add-button"><span class="icon-back"></span> Admin</a>
         </div>
+        <form action="" method="GET">
+          <div class="col-md-3">
+            <div class="frmSearch">
+              <input type="text" name="stdnt" id="search-box">
+              <div id="suggesstion-box"></div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <input type="submit" class="btn btn-primary" id="submit-button" value="Search">
+            <a href="students-view" class="add-button"><span class="icon-reload"></span> Refresh</a>
+          </div>
+        </form>
       </div>
+      <script>
+        $(document).ready(function(){
+          $("#search-box").keyup(function(){
+            var stdnt = this.value;
+            $.ajax({
+              type: "POST",
+              url: "get-student.php",
+              data: {stdnt:stdnt},
+              beforeSend: function(){
+                $("#search-box").css({"background-image":"url(images/Loading_icon.gif)", "background-repeat":"no-repeat"});
+              },
+              success: function(data){
+                $("#suggesstion-box").show();
+                $("#suggesstion-box").html(data);
+                $("#search-box").css("background","#FFF");
+              }
+            });
+          });
+        });
+      //To select country name
+      function selectStudent(val) {
+        $("#search-box").val(val);
+        $("#suggesstion-box").hide();
+      }
+      </script>
     <div class="table-responsive">
       <table class="table table-dark">
         <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Course</th><th>Fee Total</th><th>Fee Paid</th><th>Fee Remaining</th><th></th></tr></thead>
         <tbody>
         <?php
               require_once('db.php');
+              if(!empty($_GET['stdnt'])) {
+                $stdnt = $_GET['stdnt'];
+              }
               $perPage = 5;
               $page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
               $startAt = $perPage * ($page - 1);
@@ -37,6 +77,9 @@ if (!isset($_SESSION['user_id'])) {
               $links = "";
 
               $sql = "SELECT * FROM student ORDER BY date ASC LIMIT $startAt, $perPage";
+              if(!empty($stdnt)) {
+                $sql = "SELECT * FROM student WHERE name LIKE '%$stdnt%' ORDER BY date ASC LIMIT $startAt, $perPage";
+              }
               $result = $conn->query($sql);
               $pageUrl = "";
               if (!empty($_GET['page'])){
@@ -50,6 +93,9 @@ if (!isset($_SESSION['user_id'])) {
                  echo '<td> <a href="students-edit/'.$row['sid'].'">Edit</a>&nbsp &nbsp';
                  echo '<a href="student-delete/'.$row['sid'].'">Delete</a></td></tr>';
                 }
+              }
+              if ($result->num_rows <= 0) {
+                echo '<tr><td colspan="4">There are no any data</td></tr>';
               }
               $conn->close();
             ?>

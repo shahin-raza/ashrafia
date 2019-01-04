@@ -207,9 +207,10 @@ $(document).ready(function() {
           <input type="text" name="feeremain" size="30" id="feeremain" value="<?php if(isset($_POST['feeremain'])) {echo $_POST['feeremain'];}?>"  readonly>
         </div>
         <div class="col-md-4">
-          <br />
-          <input type="submit" class="btn btn-primary" id="submit-button" value="submit">
-          <a href="../students-view" class="add-button"><span class="icon-cancel"></span> Cancel</a>
+          <div class="save-cancel-btn">
+            <input type="submit" class="btn btn-primary" id="submit-button" value="submit">
+            <a href="../students-view" class="add-button"><span class="icon-cancel"></span> Cancel</a>
+          </div>
         </div>
       </div>
     </form>

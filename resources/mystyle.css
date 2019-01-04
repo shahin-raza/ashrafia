@@ -121,3 +121,7 @@ a.add-button:hover, a.add-button:active {
   background-color: red;
   color: white;
 }
+
+.save-cancel-btn {
+  margin-top: 45px;
+}
