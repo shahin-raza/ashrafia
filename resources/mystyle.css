@@ -125,3 +125,58 @@ a.add-button:hover, a.add-button:active {
 .save-cancel-btn {
   margin-top: 45px;
 }
+
+#suggesstion-box  {
+  list-style: none;
+    background-color: #00ba9d;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 264px;
+    position: absolute;
+    z-index: 100;
+    margin-top: -8px;
+}
+
+#stdnt-li {
+  border-bottom: 1px solid aliceblue;
+}
+
+.enq-donebtn{
+  background-color: #00ba9d;
+}
+
+.pipe {
+  padding: 5px;
+  color: lightgreen;
+}
+
+.action-links {
+  font-size: 14px;
+}
+
+.search-refresh {
+  margin-top: 12px;
+}
+
+tr:nth-child(even) {background-color:#f2f2f2;}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+  background-color: #F4F7F6;
+}
+
+table>thead>tr>th {
+  background-color: #d3e2e9;
+  border: 1px solid #bdcdd5 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: .5px;
+  font-family: 'Montserrat', sans-serif;
+  vertical-align: middle;
+  text-align: center !important;
+}
+
+table>tbody>tr>td {
+  border: 1px solid #bdcdd5 !important;
+  font-size: 14px !important;
+}

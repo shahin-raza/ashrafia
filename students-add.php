@@ -79,32 +79,6 @@ if (!isset($_SESSION['user_id'])) {
         $conn->close();
         header('Location: students-view');
         exit();
-      /*  echo '
-		<div id="myModal" class="modal">
-		<div class="modal-content">
-			<span class="close">&times;</span>
-			<p><span class="contact-name">'.$name.'</span> is added successfully. </p>
-		</div>
-	
-	</div>
-	<script src="js/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$("#myModal").show();
-		});
-
-		var modal = document.getElementById("myModal");
-		var span = document.getElementsByClassName("close")[0];
-		span.onclick = function() {
-				modal.style.display = "none";
-		}
-		window.onclick = function(event) {
-				if (event.target == modal) {
-						modal.style.display = "none";
-				}
-		}
-	</script>
-		';*/
       }
     }
   }
@@ -158,7 +132,7 @@ $(document).ready(function() {
     <div class="row">
       <div class="col-md-4 col-md-offset-9">
         <a href="students-view" class="add-button">View Students</a>
-        <a href="admin" class="add-button"><span class="icon-back"></span> Admin</a>
+        <a href="admin" class="add-button"><span class="ti-back-left" style="font-weight:bold;"></span> Admin</a>
       </div>
     </div>
     <form action="" method ="POST" name="studentform">

@@ -14,11 +14,12 @@ if (!isset($_SESSION['user_id'])) {
     </div>
     <div class="row">
       <div class="col-md-4 col-md-offset-10">
-      <a href="admin" class="add-button"><span class="icon-back"></span> Admin</a>
+      <a href="admin" class="add-button"><span class="ti-back-left" style="font-weight:bold;"></span> Admin</a>
       </div>
     </div>
+    <br/>
       <div class="table-responsive">
-        <table class="table table-dark">
+        <table class="table table-dark" cellpadding="20">
           <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>City</th><th>Course</th><th>Message</th><th>Date</th><th>Followup</th><th></th></tr></thead>
           <tbody>';
             require_once('db.php');
@@ -31,7 +32,7 @@ if (!isset($_SESSION['user_id'])) {
             $totalPages = ceil($r / $perPage);
             $links = "";
 
-            $sql = "SELECT * FROM contact_us ORDER BY date ASC LIMIT $startAt, $perPage";
+            $sql = "SELECT * FROM contact_us ORDER BY followup ASC,date ASC LIMIT $startAt, $perPage";
             $result = $conn->query($sql);
             $pageUrl = "";
             if (!empty($_GET['page'])){
@@ -64,14 +65,14 @@ if (!isset($_SESSION['user_id'])) {
               $date = strtotime($row['date']);
               $mess.= '<tr><td>'.$row['name'].'</td><td>'.$row['email'].'</td><td>'.$row['phone'].'</td><td>'.$row['city'].'</td><td>'.$row['course'].'</td><td>'.$row['message'].'</td><td>'.date('M d Y , g:i A',$date).'</td><td>';
               if ($row['followup']=='NO') {
-                $fup = $row['followup'];
+                $fup = '<span style="color:red;font-weight: bold;" class="icon-cross"></span>';
                 $cid = $row['cid'];
-                $mess.= $fup.'&nbsp<span class="enq-done"><button id="'.$fid.'" onclick="getFolUp('.$cid.')" class="add-button"><b>Done</b></button></span>';
+                $mess.= $fup.'&nbsp<span class="enq-done"><button id="'.$fid.'" onclick="getFolUp('.$cid.')" class="enq-donebtn">Done</button></span>';
               } else {
-                $fup = $row['followup'];
-                $mess.= ''.$fup.'';
+                $fup = '<span style="color:green;font-weight: bold;" class="ti-check"></span>';
+                $mess.= $fup;
               }
-              $mess .='</td><td><a href="enquiry-delete/'.$row['cid'].'">Delete</a></td></tr>';
+              $mess .='</td><td><a href="enquiry-delete/'.$row['cid'].'" class="action-links">Delete</a></td></tr>';
             }
         }
         $conn->close();
