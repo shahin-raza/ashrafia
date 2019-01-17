@@ -1,0 +1,17 @@
+RewriteEngine On
+
+RewriteRule ^home$ index.php [NC]
+RewriteRule ^admin$ admin-view.php [NC]
+RewriteRule ^login$ login.php [NC]
+RewriteRule ^logout$ logout.php [NC]
+RewriteRule ^enquiry$ students-enquiry.php [NC]
+RewriteRule ^fee-structure fee-structure.php [NC]
+RewriteRule ^students-add students-add.php [NC]
+RewriteRule ^students-view students-view.php [NC]
+RewriteRule ^course-add course-add.php [NC]
+RewriteRule ^enquiry-delete/([^/\.]+)?$ enquiry-delete.php?cid=$1 [L]
+RewriteRule ^student-delete/([^/\.]+)?$ student-delete.php?sid=$1 [L]
+RewriteRule ^students-edit/([^/\.]+)?$ students-edit.php?sid=$1 [L]
+RewriteRule ^feest-delete/([^/\.]+)?$ feest-delete.php?cid=$1 [L]
+RewriteRule ^feest-edit/([^/\.]+)?$ feest-edit.php?cid=$1 [L]
+
