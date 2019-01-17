@@ -128,14 +128,18 @@ a.add-button:hover, a.add-button:active {
 
 #suggesstion-box  {
   list-style: none;
-    background-color: #00ba9d;
-    color: white;
-    margin: 0;
-    padding: 0;
-    width: 264px;
-    position: absolute;
-    z-index: 100;
-    margin-top: -8px;
+  background-color: #00ba9d;
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: 264px;
+  position: absolute;
+  z-index: 100;
+  margin-top: -8px;
+}
+
+#suggesstion-box li:hover {
+  background-color: #355288;
 }
 
 #stdnt-li {
@@ -148,7 +152,7 @@ a.add-button:hover, a.add-button:active {
 
 .pipe {
   padding: 5px;
-  color: lightgreen;
+  color: #bcf3bc;
 }
 
 .action-links {
@@ -159,10 +163,10 @@ a.add-button:hover, a.add-button:active {
   margin-top: 12px;
 }
 
-tr:nth-child(even) {background-color:#f2f2f2;}
+tr:nth-child(even) {background-color:#f4f7f6;}
 
 .table-striped>tbody>tr:nth-of-type(odd) {
-  background-color: #F4F7F6;
+  background-color: #fbfbfb;
 }
 
 table>thead>tr>th {
@@ -179,4 +183,5 @@ table>thead>tr>th {
 table>tbody>tr>td {
   border: 1px solid #bdcdd5 !important;
   font-size: 14px !important;
+  text-align: center !important;
 }

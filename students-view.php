@@ -60,7 +60,7 @@ if (!isset($_SESSION['user_id'])) {
         $("#suggesstion-box").hide();
       }
       </script>
-    <div class="table-responsive">
+    <div class="table-responsive" cellpadding="20">
       <table class="table table-dark">
         <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Course</th><th>Fee Total</th><th>Fee Paid</th><th>Fee Remaining</th><th></th></tr></thead>
         <tbody>

@@ -24,7 +24,7 @@ if (!isset($_SESSION['user_id'])) {
     <br/> <br/>
     </div>
     <div class="table-responsive">
-        <table class="table table-dark">
+        <table class="table table-dark" cellpadding="20">
           <thead><tr><th>Course Name</th><th>Fee Amount</th><th>Duration</th><th></th></tr></thead>
           <tbody>
             <?php

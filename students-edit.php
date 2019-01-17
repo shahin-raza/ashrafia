@@ -160,7 +160,7 @@ $(document).ready(function() {
     </div>
     <div class="row">
       <div class="col-md-4 col-md-offset-10">
-        <a href="../admin" class="add-button"><span class="icon-back"></span> Admin</a>
+        <a href="../admin" class="add-button"><span class="ti-back-left" style="font-weight:bold;"></span> Admin</a>
       </div>
     </div>
     <form action="" method ="POST" name="studentform">
